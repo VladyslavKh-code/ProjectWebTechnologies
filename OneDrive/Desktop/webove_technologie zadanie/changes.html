@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekcia Zmena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Sekcia Zmena</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="hobbies.html">Záľuby</a></li>
+            <li><a href="changes.html">Sekcia Zmena</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content">
+    <section id="sekcia_zmena">
+        <h2>Vykonané zmeny</h2>
+        <p>V tejto sekcii nájdete informácie o vykonaných úpravách v oblasti UI/UX a prístupnosti.</p>
+        <p>Skúste meniť veľkosť textu pomocou posuvníka alebo tlačidiel nižšie:</p>
+
+        <!-- Posuvný Sizebar a tlačidlá -->
+        <div class="sizebar-container">
+            <label for="sizeSlider">Aktuálna veľkosť textu:</label>
+            <div class="control-buttons">
+                <button onclick="decreaseFontSize()" class="resize-btn">-</button>
+                <input type="range" id="sizeSlider" min="1" max="3" step="1" value="2" onchange="updateFontSize(this.value)">
+                <button onclick="increaseFontSize()" class="resize-btn">+</button>
+            </div>
+            <div class="sizebar-labels">
+                <span>Malé</span>
+                <span>Stredné</span>
+                <span>Veľké</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
