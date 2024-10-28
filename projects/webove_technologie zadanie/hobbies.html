@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Záľuby</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+<!-- Bootstrap JS -->
+
+</head>
+<body class="bg-dark text-light">
+
+    <header>
+        <h1>Naše zaľuby</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="hobbies.html">Záľuby</a></li>
+                <li><a href="changes.html">Sekcia Zmena</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="modal fade" id="interestModal" tabindex="-1" aria-labelledby="interestModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="interestModalLabel">Detaily záujmov</h5>
+                    <!-- Видалили кнопку закриття тут -->
+                </div>
+                <div class="modal-body text-dark" id="modalContent">
+                    <!-- Динамічний вміст інтересів вставляється сюди -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Osoba 1 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="images/image-alignment-150x150.jpg" class="card-img-top" alt="Foto Alexandera">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Alexander</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Novák</p>
+                        <!-- Використання showInterests для показу інтересів у модальному вікні -->
+                        <button class="btn btn-primary btn-outline-info" onclick="showInterests(1)">Zobraziť záujmy</button>
+                        <div id="interests-1" style="display: none;">
+                            <p><strong>Záujmy:</strong> Šport, cestovanie, technológie</p>
+                            <p><strong>Opis:</strong> Alexander je športovec telom i dušou...</p>
+                            <!-- Динамічний блок рейтингу -->
+                            <div class="rating mt-2" data-id="1"></div>
+                            <p id="rating-message-1" class="text-info mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Osoba 2 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="images/image-alignment-150x150.jpg" class="card-img-top" alt="Foto Márie">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Mária</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Horáková</p>
+                        <button class="btn btn-primary btn-outline-warning" onclick="showInterests(2)">Zobraziť záujmy</button>
+                        <div id="interests-2" style="display: none;">
+                            <p><strong>Záujmy:</strong> Hudba, umenie, literatúra</p>
+                            <p><strong>Opis:</strong> Mária je umelkyňa srdcom i dušou. Miluje hudbu a často navštevuje koncerty klasickej hudby. Venuje sa maľbe a svoje obrazy vystavuje v miestnych galériách. Literatúra je pre ňu inšpiráciou, a preto často trávi večery s dobrou knihou v ruke. Rada číta filozofické a psychologické knihy, ktoré ju obohacujú na duševnej úrovni.</p>
+                            <div class="rating mt-2" data-id="2"></div>
+                            <p id="rating-message-2" class="text-info mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Osoba 3 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="images/image-alignment-150x150.jpg" class="card-img-top" alt="Foto Petra">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Peter</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Kováč</p>
+                        <button class="btn btn-primary btn-outline-success" onclick="showInterests(3)">Zobraziť záujmy</button>
+                        <div id="interests-3" style="display: none;">
+                            <p><strong>Záujmy:</strong> Programovanie, hry, cestovanie</p>
+                            <p><strong>Opis:</strong> Peter je vášnivý programátor, ktorý rád trávi hodiny nad novými projektmi a vymýšľa kreatívne riešenia. Vo voľnom čase sa venuje hrám, najmä strategickým a logickým, ktoré mu pomáhajú rozvíjať logické myslenie. Cestovanie je jeho spôsob, ako si odpočinúť a načerpať inšpiráciu na ďalšie projekty. Najradšej cestuje do horských oblastí, kde si môže oddýchnuť od každodenného ruchu.</p>
+                            <div class="rating mt-2" data-id="3"></div>
+                            <p id="rating-message-3" class="text-info mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Osoba 4 -->
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="images/photo.png" class="card-img-top" alt="Foto Jany">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Jana</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Miháliková</p>
+                        <button class="btn btn-primary btn-outline-warning" onclick="showInterests(4)">Zobraziť záujmy</button>
+                        <div id="interests-4" style="display: none;">
+                            <p><strong>Záujmy:</strong> Knihy, fotografia, šport</p>
+                            <p><strong>Opis:</strong> Jana je milovníčkou prírody a aktívneho životného štýlu. Jej vášňou sú knihy, najmä beletria a prírodovedné publikácie. Okrem toho sa venuje fotografii a zachytáva krásu prírody na svojich výletoch do hôr a lesov. Pravidelne športuje, beháva a cvičí jogu, čo jej pomáha udržiavať fyzickú aj duševnú rovnováhu.</p>
+                            <div class="rating mt-2" data-id="4"></div>
+                            <p id="rating-message-4" class="text-info mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Модальне вікно Bootstrap -->
+    <div class="modal fade" id="interestModal" tabindex="-1" aria-labelledby="interestModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="interestModalLabel">Detaily záujmov</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-dark" id="modalContent">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+
