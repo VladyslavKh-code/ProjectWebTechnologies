@@ -117,3 +117,5 @@ function applyFontSize() {
         }
         ratingMessage.textContent = message;
     }
+
+    

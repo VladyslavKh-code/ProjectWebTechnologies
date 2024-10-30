@@ -74,10 +74,6 @@ h2 {
     transition: transform 0.3s;
 }
 
-.hobby-card:hover {
-    transform: translateY(-5px);
-}
-
 /* Buttons */
 button {
     background-color: #bb86fc;
@@ -139,23 +135,13 @@ button:hover {
     position: relative;
 }
 
-#sizeSlider:hover {
-    opacity: 1;
-    background-color: #444;
-}
+
 .hobby-details {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease, padding 0.5s ease;
 }
-.hobby-details.expanded {
-    max-height: 300px; /* Змінити значення відповідно до вмісту */
-    padding-top: 10px;
-}
-.dark-theme {
-    background-color: #333;
-    color: #fff;
-}
+
   .rating .fa-star {
             cursor: pointer;
             color: #ccc; /* Початковий сірий колір для зірочок */
@@ -167,6 +153,11 @@ button:hover {
         .rating .fa-star:hover {
             color: orange; /* Зміна кольору при наведенні */
             transform: rotateY(180deg); /* Ефект перевертання */
+        }
+
+        .card {
+            background-color: #f8f9fa; /* світліший колір */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* тінь для ефекту */
         }
         
 /* Highlight current position */
@@ -216,13 +207,6 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Highlight current size */
-.sizebar-labels span.active {
-    color: #bb86fc;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
 /* Resize Buttons */
 .resize-btn {
     background-color: #bb86fc;
@@ -239,20 +223,6 @@ button:hover {
 
 .resize-btn:hover {
     background-color: #9b68e4;
-}
-
-/* Sizebar Container */
-.sizebar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.sizebar-container label {
-    font-size: 1rem;
-    color: #bb86fc;
-    margin-bottom: 10px;
 }
 
 /* Control Buttons */
@@ -294,14 +264,6 @@ button:hover {
     box-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
 }
 
-#sizeSlider::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
-    background: #bb86fc;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(187, 134, 252, 0.5);
-}
 
 /* Labels below the slider */
 .sizebar-labels {
@@ -314,160 +276,71 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Highlight current size */
-.sizebar-labels span.active {
-    color: #bb86fc;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-
-
-/* Celkový štýl */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    line-height: 1.6;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    background: #1f1f1f;
-    color: #e0e0e0;
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 1.8rem;
-}
-
-nav ul {
-    list-style: none;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #bb86fc;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffffff;
-}
-
-/* Content */
-.content {
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 /* Hobby Cards */
 .hobby-container {
     display: flex;
     flex-direction: column; /* Zabezpečí, že karty sú vždy pod sebou */
     align-items: center; /* Centrovanie kariet horizontálne */
 }
-
-.hobby-card {
-    background-color: #2c2c2c; /* Farba pre karty */
-    color: #e0e0e0; /* Svetlé písmo pre kontrast */
-    border-radius: 8px;
-    margin: 10px;
-    width: 100%; /* Karty zabierajú celú šírku */
-    max-width: 400px; /* Maximálna šírka karty */
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hobby-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Obsah karty */
-.card-content {
-    display: flex; /* Flexbox na zarovnanie obrázku a textu */
-    padding: 10px;
-}
-
-/* Obrázok hobby */
-.hobby-image {
-    max-width: 100px; /* Maximálna šírka obrázku */
-    height: auto; /* Automatická výška pre zachovanie pomeru strán */
-    border-radius: 8px; /* Zaoblené hrany */
-    margin-right: 15px; /* Medzera medzi obrázkom a textom */
-    align-self: center; /* Vertikálne centrovanie obrázku */
-}
-
-/* Štýlovanie pre karty */
 .card-body {
     display: flex;
     flex-direction: column; /* Zobrazí meno a priezvisko pod sebou */
     justify-content: center; /* Vertikálne centrovanie textu */
 }
 
-/* Label pre Meno a Priezvisko */
-.label {
-    font-weight: 300; /* Tenký font pre popisky */
-    color: #000000; /* Čierna farba pre popisky */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.modal.fade .modal-dialog {
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 0.5s ease;
 }
 
-/* Štýlovanie pre zvýraznené mená */
-.highlight {
-    color: #bb86fc; /* Fialová farba pre mená */
-    font-weight: bold; /* Hrubé písmo pre mená */
+.modal.fade.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+.card-img-top {
+    transition: all 0.3s ease;
 }
 
-/* Tlačidlo Show more */
-.show-more {
-    background-color: #ffffff; /* Biele pozadie */
-    color: #bb86fc; /* Fialové písmo */
-    border: none; /* Bez orámovania */
-    border-radius: 4px; /* Zaoblené hrany */
-    padding: 5px 10px; /* Vnútorné odsadenie */
-    cursor: pointer; /* Zmena kurzora na ukazovateľ */
-    margin-top: 10px; /* Odstup od ostatného obsahu */
-    transition: background-color 0.3s, color 0.3s; /* Animácia pre zmenu farby */
+.card-img-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-.show-more:hover {
-    background-color: #bb86fc; /* Zmena pozadia na fialové pri hover */
-    color: #ffffff; /* Biele písmo pri hover */
+.btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
 }
-
-/* Štýly pre detaily hobby */
-.hobby-details {
-    display: none; /* Skryté pred kliknutím */
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #bb86fc; /* Fialová farba textu pre záľuby */
-    background-color: #2c2c2c; /* Pozadie detailov */
-    padding: 10px;
-    border-radius: 5px;
-}
-
-
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+  }
+  
+  .grid-item {
+    padding: 20px;
+    background-color: #e0e0e0;
+  }
+  
+  /* Flexbox для секції курсів */
+  .flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+  }
+  
+  .course-card {
+    padding: 15px;
+    background-color: #f0f0f0;
+    flex: 1 1 45%; /* Розтягується до половини ширини */
+    min-width: 200px; /* Мінімальна ширина для адаптивності */
+  }
 
 
 
