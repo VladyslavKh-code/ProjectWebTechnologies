@@ -1,0 +1,187 @@
+/* Загальні налаштування */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* Основний контейнер */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #bb86fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Course Grid */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Дві картки в ряд */
+    gap: 20px;
+}
+
+/* Course Card */
+.course-card {
+    background-color: #292929;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative;
+    color: #ffffff;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    background-color: #333333;
+}
+
+.course-card h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+}
+
+.course-card p {
+    font-size: 1rem;
+    color: #bfbfbf;
+}
+
+/* Кнопки */
+.btn-primary {
+    display: inline-block;
+    background-color: #bb86fc;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #9d67d4;
+}
+
+/* Course Labels */
+.course-labels {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.label.programming {
+    background-color: #333;
+}
+
+.label.python {
+    background-color: #3b82f6;
+}
+
+.label.dev {
+    background-color: #22c55e;
+}
+
+.label.english {
+    background-color: #16a34a;
+}
+
+.label.count {
+    background-color: #bb86fc;
+    color: #292929;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: #bb86fc;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer .social-icons a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr; 
+    }
+}

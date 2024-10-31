@@ -1,4 +1,3 @@
-
 let currentSize = 2;
 
 function updateFontSize(value) {
@@ -42,80 +41,77 @@ function applyFontSize() {
     slider.setAttribute('data-size', sizeText);
 }
 
+// Funkcia na zobrazenie záujmov v modálnom okne
+function showInterests(id) {
+    console.log(`showInterests called with id: ${id}`);
+    const interestsText = document.getElementById(`interests-${id}`).innerHTML;
+    document.getElementById("modalContent").innerHTML = interestsText;
 
-    // Функція для показу інтересів у модальному вікні
-    function showInterests(id) {
-        console.log(`showInterests called with id: ${id}`);
-        const interestsText = document.getElementById(`interests-${id}`).innerHTML;
-        document.getElementById("modalContent").innerHTML = interestsText;
+    const modal = new bootstrap.Modal(document.getElementById('interestModal'));
+    modal.show();
 
-        const modal = new bootstrap.Modal(document.getElementById('interestModal'));
-        modal.show();
+    // Získanie divu pre hodnotenie a vytvorenie hviezdičiek
+    const ratingDiv = document.querySelector(`#modalContent .rating`);
+    if (ratingDiv) {
+        ratingDiv.innerHTML = ''; 
+        createStarRating(ratingDiv, id);
+    }
+}
 
-        
-        const ratingDiv = document.querySelector(`#modalContent .rating`);
-        if (ratingDiv) {
-            ratingDiv.innerHTML = ''; 
-            createStarRating(ratingDiv, id);
+// Funkcia na vytvorenie hodnotenia hviezdičkami
+function createStarRating(element, id) {
+    console.log(`createStarRating called for id: ${id}`);
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('i');
+        star.classList.add('fa', 'fa-star');
+        star.dataset.rating = i;
+        star.dataset.id = id;
+        star.addEventListener('click', handleStarClick);
+        element.appendChild(star);
+    }
+}
+
+// Spracovanie kliknutia na hviezdičku
+function handleStarClick(event) {
+    const rating = event.target.dataset.rating;
+    const id = event.target.dataset.id;
+    console.log(`Star clicked - id: ${id}, rating: ${rating}`);
+    rateInterest(id, rating);
+}
+
+// Funkcia na zobrazenie hodnotenia
+function rateInterest(id, rating) {
+    // Zmena farby hviezdičiek na žltú do vybratého hodnotenia
+    const stars = document.querySelectorAll(`.rating[data-id="${id}"] .fa-star`);
+    stars.forEach((star, index) => {
+        if (index < rating) {
+            star.classList.add('checked');
+        } else {
+            star.classList.remove('checked');
         }
+    });
+
+    // Zobrazenie jedinečnej správy pre každé hodnotenie
+    const ratingMessage = document.getElementById(`rating-message-${id}`);
+    let message = '';
+    switch (parseInt(rating)) {
+        case 1:
+            message = 'Nízke hodnotenie – dúfame v zlepšenie!';
+            break;
+        case 2:
+            message = 'Priemerné hodnotenie, môže byť lepšie!';
+            break;
+        case 3:
+            message = 'Stredné hodnotenie – je nad čím pracovať!';
+            break;
+        case 4:
+            message = 'Veľmi dobré! Skoro ste spokojní!';
+            break;
+        case 5:
+            message = 'Výborne! Ste úplne spokojní!';
+            break;
+        default:
+            message = 'Vyberte hodnotenie.';
     }
-
-    // Функція для створення зірочок
-    function createStarRating(element, id) {
-        console.log(`createStarRating called for id: ${id}`);
-        for (let i = 1; i <= 5; i++) {
-            const star = document.createElement('i');
-            star.classList.add('fa', 'fa-star');
-            star.dataset.rating = i;
-            star.dataset.id = id;
-            star.addEventListener('click', handleStarClick);
-            element.appendChild(star);
-        }
-    }
-
-    // Обробник кліку на зірочку
-    function handleStarClick(event) {
-        const rating = event.target.dataset.rating;
-        const id = event.target.dataset.id;
-        console.log(`Star clicked - id: ${id}, rating: ${rating}`);
-        rateInterest(id, rating);
-    }
-
-    // Функція для виставлення рейтингу
-    function rateInterest(id, rating) {
-        // Змінюємо колір зірочок на жовтий до вибраного рейтингу
-        const stars = document.querySelectorAll(`.rating[data-id="${id}"] .fa-star`);
-        stars.forEach((star, index) => {
-            if (index < rating) {
-                star.classList.add('checked');
-            } else {
-                star.classList.remove('checked');
-            }
-        });
-
-        // Відображаємо унікальне повідомлення для кожного рейтингу
-        const ratingMessage = document.getElementById(`rating-message-${id}`);
-        let message = '';
-        switch (parseInt(rating)) {
-            case 1:
-                message = 'Nízke hodnotenie – dúfame v zlepšenie!';
-                break;
-            case 2:
-                message = 'Priemerné hodnotenie, môže byť lepšie!';
-                break;
-            case 3:
-                message = 'Stredné hodnotenie – je nad čím pracovať!';
-                break;
-            case 4:
-                message = 'Veľmi dobré! Skoro ste spokojní!';
-                break;
-            case 5:
-                message = 'Výborne! Ste úplne spokojní!';
-                break;
-            default:
-                message = 'Vyberte hodnotenie.';
-        }
-        ratingMessage.textContent = message;
-    }
-
-    
+    ratingMessage.textContent = message;
+}

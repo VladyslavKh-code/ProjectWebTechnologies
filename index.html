@@ -2,14 +2,11 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moderná Web Stránka</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="/js-files/script.js"></script>
+    <link rel="stylesheet" href="style-index.css">
 </head>
 <body>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <header>
     <h1>Vitajte na našej stránke</h1>
     <nav>
@@ -21,19 +18,53 @@
     </nav>
 </header>
 
-<div class="grid-container">
-  <header class="grid-item header">Nadpis</header>
-  
-  <section class="grid-item courses-section">
-    <div class="flexbox-container">
-      <div class="flex-item course-card">Kurz Programovania</div>
-      <div class="flex-item course-card">Kurz Matematiky</div>
-      <div class="flex-item course-card">Kurz Angličtiny</div>
-      <div class="flex-item course-card">Kurz Nemčiny</div>
-    </div>
+<main class="main-container">
+  <section class="course-grid">
+      <div class="course-card">
+          <div class="course-labels">
+              <span class="label programming">programming</span>
+              <span class="label count">42 kurzov</span>
+          </div>
+          <h3>Kurz Programovania</h3>
+          <p>Naučte sa základné princípy programovania s nami.</p>
+          <button class="btn-primary">Zaregistrovať sa</button>
+      </div>
+      <div class="course-card">
+          <div class="course-labels">
+              <span class="label python">python</span>
+              <span class="label count">77 kurzov</span>
+          </div>
+          <h3>Python</h3>
+          <p>Rozšírte svoje zručnosti v jazyku Python.</p>
+          <button class="btn-primary">Zaregistrovať sa</button>
+      </div>
+      <div class="course-card">
+          <div class="course-labels">
+              <span class="label dev">dev</span>
+              <span class="label count">58 kurzov</span>
+          </div>
+          <h3>Web Vývoj</h3>
+          <p>Naučte sa, ako vytvárať moderné webové aplikácie.</p>
+          <button class="btn-primary">Zaregistrovať sa</button>
+      </div>
+      <div class="course-card">
+          <div class="course-labels">
+              <span class="label english">english</span>
+              <span class="label count">55 kurzov</span>
+          </div>
+          <h3>Angličtina</h3>
+          <p>Zlepšite svoje jazykové znalosti v angličtine.</p>
+          <button class="btn-primary">Zaregistrovať sa</button>
+      </div>
   </section>
-  
-  <footer class="grid-item footer">Päta</footer>
-</div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Moderná Web Stránka. Všetky práva vyhradené.</p>
+  <div class="social-icons">
+      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+  </div>
+</footer>
+
 </body>
 </html>

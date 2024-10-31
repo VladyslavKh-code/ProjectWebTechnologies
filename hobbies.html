@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Záľuby</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="/js-files/script.js"></script>
+    <link rel="stylesheet" href="style-hobbies.css">
+    <script src="script.js"></script>
 
 <!-- Bootstrap JS -->
 
@@ -33,10 +33,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title text-dark" id="interestModalLabel">Detaily záujmov</h5>
-                    <!-- Видалили кнопку закриття тут -->
                 </div>
                 <div class="modal-body text-dark" id="modalContent">
-                    <!-- Динамічний вміст інтересів вставляється сюди -->
                 </div>
             </div>
         </div>
@@ -51,12 +49,10 @@
                     <div class="card-body text-center">
                         <h5 class="card-title text-dark font-weight-bold">Meno: Alexander</h5>
                         <p class="text-dark font-weight-bold">Priezvisko: Novák</p>
-                        <!-- Використання showInterests для показу інтересів у модальному вікні -->
                         <button class="btn btn-primary btn-outline-info" onclick="showInterests(1)">Zobraziť záujmy</button>
                         <div id="interests-1" style="display: none;">
                             <p><strong>Záujmy:</strong> Šport, cestovanie, technológie</p>
                             <p><strong>Opis:</strong> Alexander je športovec telom i dušou...</p>
-                            <!-- Динамічний блок рейтингу -->
                             <div class="rating mt-2" data-id="1"></div>
                             <p id="rating-message-1" class="text-info mt-2"></p>
                         </div>
@@ -121,7 +117,7 @@
     </div>
     
     
-    <!-- Модальне вікно Bootstrap -->
+    <!-- Modal window for Bootstrap -->
     <div class="modal fade" id="interestModal" tabindex="-1" aria-labelledby="interestModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
