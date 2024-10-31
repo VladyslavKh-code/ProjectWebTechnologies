@@ -61,52 +61,103 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
+/* Анімація з’явлення */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Course Grid */
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Дві картки в ряд */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
-/* Course Card */
 .course-card {
-    background-color: #292929;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    text-align: left;
-    transition: transform 0.3s, background-color 0.3s;
     position: relative;
-    color: #ffffff;
+    overflow: hidden;
+    border-radius: 12px;
+    opacity: 0; /* Початковий стан: невидимий */
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 0.6s ease-out forwards; /* Анімація */
+    transform: translateY(20px); /* Початкове зміщення вниз */
 }
 
 .course-card:hover {
-    transform: translateY(-5px);
-    background-color: #333333;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.course-card h3 {
-    font-size: 1.6rem;
+.course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.course-card:hover .course-image {
+    opacity: 0.8;
+}
+
+.course-content {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
+    width: 100%;
+    padding: 15px;
+    transition: transform 0.3s;
+    transform: translateY(100%);
 }
 
-.course-card p {
+.course-card:hover .course-content {
+    transform: translateY(0);
+}
+
+.course-content h3 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.course-content p {
     font-size: 1rem;
+    margin: 10px 0;
     color: #bfbfbf;
+}
+
+/* Додамо затримку для анімації з’явлення на кожному елементі */
+.course-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.course-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.course-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.course-card:nth-child(4) {
+    animation-delay: 0.8s;
 }
 
 /* Кнопки */
 .btn-primary {
-    display: inline-block;
     background-color: #bb86fc;
-    color: #ffffff;
+    color: #fff;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    text-align: center;
-    font-weight: bold;
 }
 
 .btn-primary:hover {
@@ -128,26 +179,38 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-.label.programming {
-    background-color: #333;
+.label.programming { background-color: #333; }
+.label.python { background-color: #3b82f6; }
+.label.dev { background-color: #22c55e; }
+.label.english { background-color: #16a34a; }
+.label.count { background-color: #bb86fc; color: #292929; }
+
+/* Додаткові секції */
+.info-section {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.label.python {
-    background-color: #3b82f6;
+.info-section h2 {
+    color: #bb86fc;
+    margin-bottom: 15px;
 }
 
-.label.dev {
-    background-color: #22c55e;
+#feedback-form form {
+    display: flex;
+    flex-direction: column;
 }
 
-.label.english {
-    background-color: #16a34a;
+#feedback-form label, #feedback-form input, #feedback-form textarea, #feedback-form button {
+    margin-bottom: 10px;
 }
 
-.label.count {
-    background-color: #bb86fc;
-    color: #292929;
-    font-weight: bold;
+#feedback-form button {
+    align-self: flex-start;
 }
 
 /* Footer */
@@ -156,13 +219,8 @@ footer {
     color: #e0e0e0;
     text-align: center;
     padding: 15px;
-    border-radius: 8px;
     width: 100%;
     margin-top: auto;
-}
-
-footer p {
-    margin: 0;
 }
 
 footer .social-icons {
@@ -180,8 +238,93 @@ footer .social-icons a:hover {
     color: #ffffff;
 }
 
+/* Адаптивність для менших екранів */
 @media (max-width: 768px) {
     .course-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
+    }
+}
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.6s ease-out;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    color: #bb86fc;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.form-container input, .form-container select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: #e0e0e0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-container input:focus, .form-container select:focus {
+    outline: none;
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.form-container button {
+    background-color: #bb86fc;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #9d67d4;
+    transform: scale(1.1);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInEffect 0.6s forwards;
+}
+
+@keyframes fadeInEffect {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-out {
+    opacity: 1;
+    animation: fadeOutEffect 0.5s forwards;
+}
+
+@keyframes fadeOutEffect {
+    to {
+        opacity: 0;
     }
 }

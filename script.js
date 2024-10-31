@@ -115,3 +115,37 @@ function rateInterest(id, rating) {
     }
     ratingMessage.textContent = message;
 }
+function revealOnScroll() {
+    const cards = document.querySelectorAll('.course-card');
+    const windowHeight = window.innerHeight;
+    
+    cards.forEach(card => {
+        const revealTop = card.getBoundingClientRect().top;
+        
+        if (revealTop < windowHeight - 100) {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+        link.addEventListener("click", function(event) {
+            if (this.getAttribute("href") !== "#") {
+                event.preventDefault();
+                const href = this.getAttribute("href");
+
+                document.body.classList.add("fade-out");
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); 
+            }
+        });
+    });
+});

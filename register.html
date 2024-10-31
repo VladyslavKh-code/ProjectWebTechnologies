@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderná Web Stránka</title>
+    <link rel="stylesheet" href="style-index.css">
+</head>
+<body>
+<header>
+    <h1>Vitajte na našej stránke</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Domov</a></li>
+            <li><a href="hobbies.html">Záľuby</a></li>
+            <li><a href="changes.html">Sekcia Zmena</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="form-container">
+    <form action="#" method="post">
+        <label for="name">Meno:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="course">Kurz:</label>
+        <select id="course" name="course" required>
+            <option value="programming">Kurz Programovania</option>
+            <option value="python">Python</option>
+            <option value="web-development">Web Vývoj</option>
+            <option value="english">Angličtina</option>
+        </select>
+
+        <button type="submit" class="btn-primary">Odoslať</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2024 Moderná Web Stránka. Všetky práva vyhradené.</p>
+</footer>
+</body>
+</html>

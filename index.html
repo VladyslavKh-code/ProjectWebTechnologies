@@ -19,43 +19,92 @@
 </header>
 
 <main class="main-container">
+  <!-- Kurzy -->
   <section class="course-grid">
       <div class="course-card">
-          <div class="course-labels">
-              <span class="label programming">programming</span>
-              <span class="label count">42 kurzov</span>
+          <img src="images/programming.webp" alt="Programovanie" class="course-image">
+          <div class="course-content">
+              <div class="course-labels">
+                  <span class="label programming">programovanie</span>
+                  <span class="label count">42 kurzov</span>
+              </div>
+              <h3>Kurz Programovania</h3>
+              <p>Naučte sa základné princípy programovania s nami.</p>
+              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
           </div>
-          <h3>Kurz Programovania</h3>
-          <p>Naučte sa základné princípy programovania s nami.</p>
-          <button class="btn-primary">Zaregistrovať sa</button>
       </div>
       <div class="course-card">
-          <div class="course-labels">
-              <span class="label python">python</span>
-              <span class="label count">77 kurzov</span>
+          <img src="images/math.jpg" alt="Math" class="course-image">
+          <div class="course-content">
+              <div class="course-labels">
+                  <span class="label python">Math</span>
+                  <span class="label count">77 kurzov</span>
+              </div>
+              <h3>Math</h3>
+              <p>Rozšírte svoje zručnosti v Matematike.</p>
+              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
           </div>
-          <h3>Python</h3>
-          <p>Rozšírte svoje zručnosti v jazyku Python.</p>
-          <button class="btn-primary">Zaregistrovať sa</button>
       </div>
       <div class="course-card">
-          <div class="course-labels">
-              <span class="label dev">dev</span>
-              <span class="label count">58 kurzov</span>
+          <img src="images/web_development.jpg" alt="Webový Vývoj" class="course-image">
+          <div class="course-content">
+              <div class="course-labels">
+                  <span class="label dev">vývoj</span>
+                  <span class="label count">58 kurzov</span>
+              </div>
+              <h3>Webový Vývoj</h3>
+              <p>Naučte sa, ako vytvárať moderné webové aplikácie.</p>
+              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
           </div>
-          <h3>Web Vývoj</h3>
-          <p>Naučte sa, ako vytvárať moderné webové aplikácie.</p>
-          <button class="btn-primary">Zaregistrovať sa</button>
       </div>
       <div class="course-card">
-          <div class="course-labels">
-              <span class="label english">english</span>
-              <span class="label count">55 kurzov</span>
+          <img src="images/english.jpg" alt="Angličtina" class="course-image">
+          <div class="course-content">
+              <div class="course-labels">
+                  <span class="label english">angličtina</span>
+                  <span class="label count">55 kurzov</span>
+              </div>
+              <h3>Angličtina</h3>
+              <p>Zlepšite svoje jazykové znalosti v angličtine.</p>
+              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
           </div>
-          <h3>Angličtina</h3>
-          <p>Zlepšite svoje jazykové znalosti v angličtine.</p>
-          <button class="btn-primary">Zaregistrovať sa</button>
       </div>
+  </section>
+
+  <!-- Dodatočné sekcie -->
+  <section id="about-course" class="info-section">
+      <h2>O kurze</h2>
+      <p>Naše kurzy sú vytvorené na to, aby vám pomohli rozvinúť zručnosti v rôznych oblastiach – od programovania po cudzie jazyky. Každý kurz je postavený na praktických príkladoch, ktoré vám pomôžu lepšie zvládnuť učivo.</p>
+  </section>
+
+  <section id="faq" class="info-section">
+      <h2>Často kladené otázky</h2>
+      <ul>
+          <li><strong>Je potrebná prax pre účasť na kurze?</strong> Nie, naše kurzy sú vhodné aj pre začiatočníkov.</li>
+          <li><strong>Aké materiály sú k dispozícii?</strong> Všetky potrebné materiály sú dostupné v rámci platformy.</li>
+      </ul>
+  </section>
+
+  <section id="testimonials" class="info-section">
+      <h2>Ohlasy študentov</h2>
+      <p>„Toto je najlepší kurz, ktorý som absolvoval! Veľmi sa mi páčila praktická časť.“</p>
+      <p>„Lektori sú profesionáli, kurz je jasne štruktúrovaný.“</p>
+  </section>
+
+  <section id="projects" class="info-section">
+      <h2>Príklady projektov</h2>
+      <p>Budete môcť vytvoriť projekty ako vlastnú webstránku, mobilnú aplikáciu alebo interaktívny vzdelávací nástroj.</p>
+  </section>
+
+  <section id="feedback-form" class="info-section">
+      <h2>Napíšte nám správu</h2>
+      <form action="#" method="post">
+          <label for="name">Vaše meno:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="message">Vaša správa:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit" class="btn-primary">Odoslať</button>
+      </form>
   </section>
 </main>
 
