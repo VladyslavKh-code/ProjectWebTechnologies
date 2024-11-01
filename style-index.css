@@ -328,3 +328,56 @@ footer .social-icons a:hover {
         opacity: 0;
     }
 }
+.confirmation-message {
+    background: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+    color: #004d40;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 6px 12px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.6s ease-out;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.confirmation-message p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #004d40;
+    line-height: 1.5;
+}
+
+/* Стиль для кнопки повернення */
+.btn-secondary {
+    display: inline-block;
+    background: linear-gradient(135deg, #8e24aa, #7b1fa2);
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 8px 15px rgba(142, 36, 170, 0.4);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #7b1fa2, #6a1b9a);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(142, 36, 170, 0.5);
+}
+
+/* Анімація для плавного з'явлення */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

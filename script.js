@@ -1,46 +1,3 @@
-let currentSize = 2;
-
-function updateFontSize(value) {
-    currentSize = parseInt(value);
-    applyFontSize();
-}
-
-function increaseFontSize() {
-    if (currentSize < 3) {
-        currentSize++;
-        document.getElementById('sizeSlider').value = currentSize;
-        applyFontSize();
-    }
-}
-
-function decreaseFontSize() {
-    if (currentSize > 1) {
-        currentSize--;
-        document.getElementById('sizeSlider').value = currentSize;
-        applyFontSize();
-    }
-}
-
-function applyFontSize() {
-    const section = document.getElementById('sekcia_zmena');
-    const slider = document.getElementById('sizeSlider');
-    let fontSize, sizeText;
-
-    if (currentSize === 1) {
-        fontSize = '14px';
-        sizeText = 'Malé';
-    } else if (currentSize === 2) {
-        fontSize = '18px';
-        sizeText = 'Stredné';
-    } else if (currentSize === 3) {
-        fontSize = '22px';
-        sizeText = 'Veľké';
-    }
-
-    section.style.fontSize = fontSize;
-    slider.setAttribute('data-size', sizeText);
-}
-
 // Funkcia na zobrazenie záujmov v modálnom okne
 function showInterests(id) {
     console.log(`showInterests called with id: ${id}`);
@@ -149,3 +106,43 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+function submitForm() {
+    const form = document.getElementById('registrationForm');
+    const confirmationMessage = document.getElementById('confirmationMessage');
+    form.style.display = 'none';
+    confirmationMessage.style.display = 'block';
+}
+function loadResponsiveCSS() {
+    const width = window.innerWidth;
+    let cssFile;
+
+    // Podmienky pre načítanie správneho CSS súboru podľa šírky okna
+    if (width <= 700) {
+        cssFile = 'style-700.css';
+    } else if (width <= 900) {
+        cssFile = 'style-900.css';
+    } else if (width <= 1300) {
+        cssFile = 'style-1300.css';
+    } else {
+        cssFile = 'style-1600.css';
+    }
+
+    // Odstráni existujúci CSS súbor, aby sa predišlo konfliktom
+    const existingLink = document.getElementById('responsive-css');
+    if (existingLink) {
+        existingLink.remove();
+    }
+
+    // Vytvorí nový odkaz na CSS súbor a pridá ho do dokumentu
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = cssFile;
+    link.id = 'responsive-css';
+    document.head.appendChild(link);
+}
+
+// Pri načítaní stránky zavoláme funkciu
+loadResponsiveCSS();
+
+// Pri zmene veľkosti okna znovu zavoláme funkciu
+window.addEventListener('resize', loadResponsiveCSS);
