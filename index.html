@@ -3,117 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moderná Web Stránka</title>
+    <title>VzdelajSa</title>
     <link rel="stylesheet" href="style-index.css">
 </head>
 <body>
-<header>
-    <h1>Vitajte na našej stránke</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Domov</a></li>
-            <li><a href="hobbies.html">Záľuby</a></li>
-            <li><a href="changes.html">Sekcia Zmena</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <button id="theme-switch">
+            <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                <path fill="white" d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" class="light-icon"/>
+            </svg>
+        </button>
+        <img src="images/logo.png" alt="Logo" class="logo" titlt="Logo"> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="hobbies.html">Lektori</a></li>
+                <li><a href="changes.html">Sekcia Zmena</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <main class="main-container">
-  <!-- Kurzy -->
-  <section class="course-grid">
-      <div class="course-card">
-          <img src="images/programming.webp" alt="Programovanie" class="course-image">
-          <div class="course-content">
-              <div class="course-labels">
-                  <span class="label programming">programovanie</span>
-                  <span class="label count">42 kurzov</span>
-              </div>
-              <h3>Kurz Programovania</h3>
-              <p>Naučte sa základné princípy programovania s nami.</p>
-              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
-          </div>
-      </div>
-      <div class="course-card">
-          <img src="images/math.jpg" alt="Math" class="course-image">
-          <div class="course-content">
-              <div class="course-labels">
-                  <span class="label python">Math</span>
-                  <span class="label count">77 kurzov</span>
-              </div>
-              <h3>Math</h3>
-              <p>Rozšírte svoje zručnosti v Matematike.</p>
-              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
-          </div>
-      </div>
-      <div class="course-card">
-          <img src="images/web_development.jpg" alt="Webový Vývoj" class="course-image">
-          <div class="course-content">
-              <div class="course-labels">
-                  <span class="label dev">vývoj</span>
-                  <span class="label count">58 kurzov</span>
-              </div>
-              <h3>Webový Vývoj</h3>
-              <p>Naučte sa, ako vytvárať moderné webové aplikácie.</p>
-              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
-          </div>
-      </div>
-      <div class="course-card">
-          <img src="images/english.jpg" alt="Angličtina" class="course-image">
-          <div class="course-content">
-              <div class="course-labels">
-                  <span class="label english">angličtina</span>
-                  <span class="label count">55 kurzov</span>
-              </div>
-              <h3>Angličtina</h3>
-              <p>Zlepšite svoje jazykové znalosti v angličtine.</p>
-              <a href="register.html" class="btn-primary">Zaregistrovať sa</a>
-          </div>
-      </div>
-  </section>
+    <!-- Navigačné tlačidlá -->
+    <div class="course-navigation">
+      <button id="prev-course" class="nav-arrow">
+          <img src="images/right-arrow-svgrepo-com.svg" alt="Predchádzajúci" class="arrow-icon prev-icon">
+      </button>
+      <button id="next-course" class="nav-arrow">
+          <img src="images/right-arrow-svgrepo-com.svg" alt="Nasledujúci" class="arrow-icon">
+      </button>
+  </div>
+  
+    <!-- Obalová div značka pre kurzy -->
+    <div class="course-wrapper">
+      <section class="course-grid">
+        <!-- Pôvodný kód s kurzami tu ostáva nezmenený -->
+        <div class="course-card">
+            <img src="images/programming.webp" alt="Programovanie" class="course-image">
+            <div class="course-content">
+                <h3>Kurz Programovania</h3>
+                <p>Naučíte sa základné aj pokročilé programovacie techniky, ako pracovať s rôznymi programovacími jazykmi, efektívne riešiť problémy a písať čistý, funkčný kód.</p>
+              <button type="button" class="btn-primary" id="button_register" onclick="window.location.href='register.html'">Zaregistrovať sa!</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="images/math.jpg" alt="Math" class="course-image">
+            <div class="course-content">
+                <h3>Matematika</h3>
+                <p>Naučíte sa aplikovať matematické princípy. Kurz pokrýva rôzne oblasti matematiky, čím vám poskytne základ pre ďalšie odborné štúdiá alebo pracovné pozície</p>
+              <button type="button" class="btn-primary" id="button_register" onclick="window.location.href='register.html'">Zaregistrovať sa!</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="images/web_development.jpg" alt="Webový Vývoj" class="course-image">
+            <div class="course-content">
+                <h3>Webový Vývoj</h3>
+                <p>Tento kurz vás prevedie tvorbou moderných webových stránok a aplikácií. Naučíte sa pracovať s HTML, CSS, JavaScriptom a knižnicami ako React alebo Node.js.</p>
+              <button type="button" class="btn-primary" id="button_register" onclick="window.location.href='register.html'">Zaregistrovať sa!</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="images/english.jpg" alt="Angličtina" class="course-image">
+            <div class="course-content">
+                <h3>Angličtina</h3>
+                <p>Tento kurz vám pomôže zlepšiť gramatiku, slovnú zásobu a schopnosť komunikácie v angličtine. Zameriavame sa na konverzáciu, obchodnú angličtinu a písanie. </p>
+              <button type="button" class="btn-primary" id="button_register" onclick="window.location.href='register.html'">Zaregistrovať sa!</button>
+            </div>
+        </div>
+      </section>
+    </div>
 
-  <!-- Dodatočné sekcie -->
-  <section id="about-course" class="info-section">
-      <h2>O kurze</h2>
-      <p>Naše kurzy sú vytvorené na to, aby vám pomohli rozvinúť zručnosti v rôznych oblastiach – od programovania po cudzie jazyky. Každý kurz je postavený na praktických príkladoch, ktoré vám pomôžu lepšie zvládnuť učivo.</p>
-  </section>
-
-  <section id="faq" class="info-section">
-      <h2>Často kladené otázky</h2>
-      <ul>
-          <li><strong>Je potrebná prax pre účasť na kurze?</strong> Nie, naše kurzy sú vhodné aj pre začiatočníkov.</li>
-          <li><strong>Aké materiály sú k dispozícii?</strong> Všetky potrebné materiály sú dostupné v rámci platformy.</li>
-      </ul>
-  </section>
-
+ <!-- Dodatočné sekcie -->
+ <section id="about-course" class="info-section">
+  <h2>O kurzoch <img src="images/arrow.png" alt="Arrow Icon" class="icon" /></h2>
+  <div class="content">
+    <p>Naše kurzy sú vytvorené na to, aby vám pomohli rozvinúť zručnosti v rôznych oblastiach...</p>
+    <p>Okrem teoretických vedomostí získate aj praktické zručnosti...</p>
+    <p>Pripravili sme kurzy pre všetkých, bez ohľadu na predchádzajúce skúsenosti...</p>
+  </div>
+</section>
+  
   <section id="testimonials" class="info-section">
-      <h2>Ohlasy študentov</h2>
-      <p>„Toto je najlepší kurz, ktorý som absolvoval! Veľmi sa mi páčila praktická časť.“</p>
-      <p>„Lektori sú profesionáli, kurz je jasne štruktúrovaný.“</p>
+    <h2>Ohlasy študentov</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <blockquote>
+          <p>„Toto je najlepší kurz, ktorý som absolvoval! Veľmi sa mi páčila praktická časť...“</p>
+          <footer>- Ján K.</footer>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>„Lektori sú profesionáli, kurz je jasne štruktúrovaný a zrozumiteľný...“</p>
+          <footer>- Marta P.</footer>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>„Kurzy, ktoré som absolvoval mi pomohli získať povýšenie v práci...“</p>
+          <footer>- Peter P.</footer>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>„Veľmi profesionálny prístup, vrelo odporúčam všetkým :-)...“</p>
+          <footer>- Lenka A.</footer>
+        </blockquote>
+      </div>
+      <!-- Pridaj ďalšie bloky podľa potreby -->
+    </div>
   </section>
-
+  
   <section id="projects" class="info-section">
-      <h2>Príklady projektov</h2>
-      <p>Budete môcť vytvoriť projekty ako vlastnú webstránku, mobilnú aplikáciu alebo interaktívny vzdelávací nástroj.</p>
+    <h2>Príklady projektov</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <p><strong>Vlastná webstránka:</strong> Naučíte sa vytvoriť a navrhnúť responzívnu webovú stránku...</p>
+      </div>
+      <div class="project">
+        <p><strong>Interaktívna aplikácia:</strong> Vytvoríte mobilnú aplikáciu...</p>
+      </div>
+      <div class="project">
+        <p><strong>Medzinárodný projekt:</strong> Vytvoríte prácu na ktorej budete pracovat so zahraničnými kolegami...</p>
+      </div>
+      
+    </div>
   </section>
 
-  <section id="feedback-form" class="info-section">
-      <h2>Napíšte nám správu</h2>
-      <form action="#" method="post">
-          <label for="name">Vaše meno:</label>
-          <input type="text" id="name" name="name" required>
-          <label for="message">Vaša správa:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit" class="btn-primary">Odoslať</button>
-      </form>
-  </section>
+<section id="feedback-form" class="info-section">
+    <h2>Opýtajte sa nás</h2>
+    <form id="contactForm" action="#" method="post" onsubmit="handleSubmit(event)">
+        <label for="email">Váš email:</label>
+        <input type="text" id="email" name="email" required oninput="validateForm()"  title="Vyplňte email">
+        <label for="message">Vaša správa:</label>
+        <textarea id="message" name="message" required oninput="validateForm()"  title="Napíšte správu"></textarea>
+        <div id="error-message" style="color: red; display: none;"></div>
+        <button type="submit" id="submitBtn" class="btn-primary" disabled>Odoslať</button>
+    </form>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>FAQ</h2>
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+      <span>Je potrebná prax pre účasť na kurze?</span>
+      <span class="arrow">&#x25BC;</span>
+    </div>
+    <div class="faq-answer">
+      <p>Nie, naše kurzy sú vhodné aj pre začiatočníkov...</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+      <span>Aké materiály sú k dispozícii?</span>
+      <span class="arrow">&#x25BC;</span>
+    </div>
+    <div class="faq-answer">
+      <p>Všetky potrebné materiály sú dostupné v rámci platformy...</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+      <span>Aký je formát kurzov?</span>
+      <span class="arrow">&#x25BC;</span>
+    </div>
+    <div class="faq-answer">
+      <p>Kurzy sa konajú online a sú interaktívne...</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleAnswer(this)">
+      <span>Môžem získať certifikát po ukončení kurzu?</span>
+      <span class="arrow">&#x25BC;</span>
+    </div>
+    <div class="faq-answer">
+      <p>Áno, po úspešnom ukončení kurzu obdržíte certifikát...</p>
+    </div>
+  </div>
+</section>
+
+
 </main>
 
-<footer>
-  <p>&copy; 2024 Moderná Web Stránka. Všetky práva vyhradené.</p>
-  <div class="social-icons">
-      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+<footer class="footer-container">
+  <p>&copy; 2024 VzdelajSa. Všetky práva vyhradené.</p>
+  <div class="social-links">
+    <a href="link" target="_blank">
+      <img src="images/icons8-facebook.svg" alt="Facebook" class="social-icon">
+    </a>
+    <a href="link" target="_blank">
+      <img src="images/icons8-instagram.svg" alt="Instagram" class="social-icon">
+    </a>
+    <a href="link" target="_blank">
+      <img src="images/icons8-twitter.svg" alt="Twitter" class="social-icon">
+    </a>
   </div>
 </footer>
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -29,22 +29,34 @@ function resetFontSize() {
 
 function applyFontSize() {
     const section = document.getElementById('sekcia_zmena');
-    const slider = document.getElementById('sizeSlider');
-    let fontSize, sizeText;
+    const image = document.getElementById('dynamicImage');
+    let fontSize;
 
     if (currentSize === 1) {
         fontSize = '14px';
-        sizeText = 'Malé';
+        section.className = 'small';
     } else if (currentSize === 2) {
         fontSize = '18px';
-        sizeText = 'Stredné';
+        section.className = 'medium';
     } else if (currentSize === 3) {
         fontSize = '22px';
-        sizeText = 'Veľké';
+        section.className = 'large';
     }
 
     section.style.fontSize = fontSize;
-    slider.setAttribute('data-size', sizeText);
+}
+
+// Nové funkcie na zmenu veľkosti textu
+function changeFontSize(size) {
+    if (size === 'large') {
+        currentSize = 3;
+    } else if (size === 'medium') {
+        currentSize = 2;
+    } else if (size === 'small') {
+        currentSize = 1;
+    }
+    document.getElementById('sizeSlider').value = currentSize;
+    applyFontSize();
 }
 
 // Funkcia na spracovanie klávesových skratiek

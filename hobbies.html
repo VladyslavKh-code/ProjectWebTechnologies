@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Záľuby</title>
     <link rel="stylesheet" href="style-hobbies.css">
-    <script src="script.js"></script>
+    
 
 <!-- Bootstrap JS -->
 
@@ -19,11 +19,16 @@
 <body class="bg-dark text-light">
 
     <header>
-        <h1>Naše zaľuby</h1>
+        <button id="theme-switch">
+            <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="white">
+                <path fill="white" d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z" class="light-icon"/>
+            </svg>
+        </button>
+        <img src="images/logo.png" alt="Logo" class="logo" titlt="Logo"> 
         <nav>
             <ul>
                 <li><a href="index.html">Domov</a></li>
-                <li><a href="hobbies.html">Záľuby</a></li>
+                <li><a href="hobbies.html">Lektori</a></li>
                 <li><a href="changes.html">Sekcia Zmena</a></li>
             </ul>
         </nav>
@@ -40,19 +45,19 @@
         </div>
     </div>
 
-    <div class="container my-5">
+    <div class="container blur my-5">
         <div class="row">
             <!-- Osoba 1 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
-                    <img src="Webove_technologie/image-alignment-150x150.jpg" class="card-img-top" alt="Foto Alexandera">
+                    <img src="images/david.jpg" class="card-img-top" alt="Foto Davida" title="Lektor Dávid">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-dark font-weight-bold">Meno: Alexander</h5>
-                        <p class="text-dark font-weight-bold">Priezvisko: Novák</p>
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Dávid</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Gonda</p>
                         <button class="btn btn-primary btn-outline-info" onclick="showInterests(1)">Zobraziť záujmy</button>
                         <div id="interests-1" style="display: none;">
-                            <p><strong>Záujmy:</strong> Šport, cestovanie, technológie</p>
-                            <p><strong>Opis:</strong> Alexander je športovec telom i dušou...</p>
+                            <p><strong>Záujmy:</strong> Šport, zvieratá, turistika, posilňovanie, priatelia, technológie, hry</p>
+                            <p><strong>Opis:</strong> Dávid je nadšenec aktívneho životného štýlu a vášnivý športovec, ktorý si užíva rôzne športy, ako je plávanie, posilňovanie a beh. Okrem športu má silný vzťah k zvieratám a často trávi čas s domácimi zviratami. Turistika je pre neho spôsob, ako sa spojiť s prírodou a relaxovať po náročnom týždni. Posilňovanie mu pomáha udržiavať si kondíciu a zdravý životný štýl. Rád sa stretáva s priateľmi, s ktorými zdieľa zážitky a spoločné aktivity. Je tiež technicky zdatný a rád sleduje novinky v technológii, pričom sa zaujíma o video hry, ktoré mu poskytujú zábavu a možnosť oddychu.</p>
                             <div class="rating mt-2" data-id="1"></div>
                             <p id="rating-message-1" class="text-info mt-2"></p>
                         </div>
@@ -63,14 +68,14 @@
             <!-- Osoba 2 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
-                    <img src="Webove_technologie/photo.png" class="card-img-top" alt="Foto Márie">
+                    <img src="images/daniel.jpg" class="card-img-top" alt="Foto Daniela" title="Lektor Daniel">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-dark font-weight-bold">Meno: Mária</h5>
-                        <p class="text-dark font-weight-bold">Priezvisko: Horáková</p>
-                        <button class="btn btn-primary btn-outline-warning" onclick="showInterests(2)">Zobraziť záujmy</button>
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Daniel</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Konečný</p>
+                        <button class="btn btn-primary btn-outline-info" onclick="showInterests(2)">Zobraziť záujmy</button>
                         <div id="interests-2" style="display: none;">
-                            <p><strong>Záujmy:</strong> Hudba, umenie, literatúra</p>
-                            <p><strong>Opis:</strong> Mária je umelkyňa srdcom i dušou. Miluje hudbu a často navštevuje koncerty klasickej hudby. Venuje sa maľbe a svoje obrazy vystavuje v miestnych galériách. Literatúra je pre ňu inšpiráciou, a preto často trávi večery s dobrou knihou v ruke. Rada číta filozofické a psychologické knihy, ktoré ju obohacujú na duševnej úrovni.</p>
+                            <p><strong>Záujmy:</strong> Šport, cyklistika, hry, zvieratá, technológie </p>
+                            <p><strong>Opis:</strong> Daniel je aktívny športovec a nadšenec cyklistiky, ktorý rád trávi čas vonku a zlepšuje svoje športové schopnosti. Okrem toho sa venuje aj hrám, kde nachádza priestor na relax a zábavu. Miluje zvieratá a má blízky vzťah k prírode. Zaujíma sa o technológie a sleduje nové trendy, ktoré mu pomáhajú rozvíjať svoje záľuby a poznatky.</p>
                             <div class="rating mt-2" data-id="2"></div>
                             <p id="rating-message-2" class="text-info mt-2"></p>
                         </div>
@@ -81,14 +86,13 @@
             <!-- Osoba 3 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
-                    <img src="Webove_technologie/photo.png" class="card-img-top" alt="Foto Petra">
+                    <img src="images/vladyslav.jpg" class="card-img-top" alt="Foto Vladyslav" title="Lektor Vladyslav">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-dark font-weight-bold">Meno: Peter</h5>
-                        <p class="text-dark font-weight-bold">Priezvisko: Kováč</p>
-                        <button class="btn btn-primary btn-outline-success" onclick="showInterests(3)">Zobraziť záujmy</button>
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Vladyslav</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Khavan</p>
+                        <button class="btn btn-primary btn-outline-info" onclick="showInterests(3)">Zobraziť záujmy</button>
                         <div id="interests-3" style="display: none;">
-                            <p><strong>Záujmy:</strong> Programovanie, hry, cestovanie</p>
-                            <p><strong>Opis:</strong> Peter je vášnivý programátor, ktorý rád trávi hodiny nad novými projektmi a vymýšľa kreatívne riešenia. Vo voľnom čase sa venuje hrám, najmä strategickým a logickým, ktoré mu pomáhajú rozvíjať logické myslenie. Cestovanie je jeho spôsob, ako si odpočinúť a načerpať inšpiráciu na ďalšie projekty. Najradšej cestuje do horských oblastí, kde si môže oddýchnuť od každodenného ruchu.</p>
+                            <p><strong>Záujmy:</strong> Futbal, stolný tenis, programovanie, matematika</p> <p><strong>Opis:</strong> Vladyslav je nadšený programátor a pedagóg, ktorý s radosťou odovzdáva svoje vedomosti ďalej. Vo voľnom čase sa venuje športom, najmä futbalu a stolnému tenisu, ktoré ho učia tímovej spolupráci a presnosti. Programovanie a matematika sú jeho vášeň, kde neustále objavuje nové výzvy a logické súvislosti. So študentmi sa snaží zdieľať svoje skúsenosti a inšpirovať ich k tomu, aby neprestávali objavovať svet vedy a technológie.
                             <div class="rating mt-2" data-id="3"></div>
                             <p id="rating-message-3" class="text-info mt-2"></p>
                         </div>
@@ -99,14 +103,14 @@
             <!-- Osoba 4 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
-                    <img src="Webove_technologie/image-alignment-150x150.jpg" class="card-img-top" alt="Foto Jany">
+                    <img src="images/jakub.png" class="card-img-top" alt="Foto Jakuba" title="Lektor Vladyslav">
                     <div class="card-body text-center">
-                        <h5 class="card-title text-dark font-weight-bold">Meno: Jana</h5>
-                        <p class="text-dark font-weight-bold">Priezvisko: Miháliková</p>
-                        <button class="btn btn-primary btn-outline-warning" onclick="showInterests(4)">Zobraziť záujmy</button>
+                        <h5 class="card-title text-dark font-weight-bold">Meno: Jakub</h5>
+                        <p class="text-dark font-weight-bold">Priezvisko: Bajo</p>
+                        <button class="btn btn-primary btn-outline-info" onclick="showInterests(4)">Zobraziť záujmy</button>
                         <div id="interests-4" style="display: none;">
-                            <p><strong>Záujmy:</strong> Knihy, fotografia, šport</p>
-                            <p><strong>Opis:</strong> Jana je milovníčkou prírody a aktívneho životného štýlu. Jej vášňou sú knihy, najmä beletria a prírodovedné publikácie. Okrem toho sa venuje fotografii a zachytáva krásu prírody na svojich výletoch do hôr a lesov. Pravidelne športuje, beháva a cvičí jogu, čo jej pomáha udržiavať fyzickú aj duševnú rovnováhu.</p>
+                            <p><strong>Záujmy:</strong> Programovanie, hry, cestovanie</p>
+                            <p><strong>Opis:</strong> Jakub je vášnivý programátor, ktorý rád trávi hodiny nad novými projektmi a vymýšľa kreatívne riešenia. Vo voľnom čase sa venuje hrám, najmä strategickým a logickým, ktoré mu pomáhajú rozvíjať logické myslenie. Cestovanie je jeho spôsob, ako si odpočinúť a načerpať inšpiráciu na ďalšie projekty. Najradšej cestuje do horských oblastí, kde si môže oddýchnuť od každodenného ruchu.</p>
                             <div class="rating mt-2" data-id="4"></div>
                             <p id="rating-message-4" class="text-info mt-2"></p>
                         </div>
@@ -131,5 +135,20 @@
         </div>
     </div>
 </main>
-</body>
 
+<footer>
+    <p>&copy; 2024 VzdelajSa. Všetky práva vyhradené.</p>
+    <div class="social-links">
+        <a href="link" target="_blank">
+          <img src="images/icons8-facebook.svg" alt="Facebook" class="social-icon">
+        </a>
+        <a href="link" target="_blank">
+          <img src="images/icons8-instagram.svg" alt="Instagram" class="social-icon">
+        </a>
+        <a href="link" target="_blank">
+          <img src="images/icons8-twitter.svg" alt="Twitter" class="social-icon">
+        </a>
+      </div>
+  </footer>
+<script src="script.js"></script>
+</body>
